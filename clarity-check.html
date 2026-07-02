@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assumption or Evidence? Clarity Check — Opportunity Machine</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="review-banner">REVIEW BUILD — fully working scoring logic per <code>PHASE-5-WEBSITE-CLAIM-VERIFICATION-REGISTER.md</code> / Build Pack §4.</div>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <div class="wordmark">Opportunity <b>Machine</b></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="builder.html">Builder</a>
+      <a href="community.html">Community</a>
+      <a href="ecosystem.html">Ecosystem</a>
+      <a href="talent.html">Talent</a>
+      <a href="mentors.html">Mentors</a>
+    </div>
+    <a class="nav-cta" href="builder.html#invite">See if Builder is a fit →</a>
+  </div>
+</nav>
+
+<div class="cc-shell">
+  <div class="cc-progress" id="cc-progress"></div>
+
+  <!-- INTRO -->
+  <div class="cc-screen active cc-intro" data-screen="intro">
+    <h1>Assumption or Evidence?</h1>
+    <p>Every startup runs on a mix of both. The question is the ratio.</p>
+    <p>Six questions, two minutes, no email required. At the end you'll get an honest read on where your idea stands — and the single most useful next step from there.</p>
+    <button class="btn btn-primary" onclick="ccGoto(1)">Let's find out →</button>
+  </div>
+
+  <!-- Q1 -->
+  <div class="cc-screen" data-screen="q1">
+    <div class="cc-q">How many potential customers have you had a real conversation with about this problem?</div>
+    <div class="cc-options" data-q="1">
+      <button class="cc-option" data-v="0">None yet</button>
+      <button class="cc-option" data-v="1">1–4</button>
+      <button class="cc-option" data-v="2">5–14</button>
+      <button class="cc-option" data-v="3">15 or more</button>
+    </div>
+    <div class="cc-nav"><a class="cc-back" onclick="ccGoto(0)">← Back</a><span></span></div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="cc-screen" data-screen="q2">
+    <div class="cc-q">Could you name the exact person who would pay for this — their role, not a demographic?</div>
+    <div class="cc-options" data-q="2">
+      <button class="cc-option" data-v="0">Not really — it's more of a general audience</button>
+      <button class="cc-option" data-v="1">I have a rough picture</button>
+      <button class="cc-option" data-v="2">Yes — I could name the role and describe their day</button>
+    </div>
+    <div class="cc-nav"><a class="cc-back" onclick="ccGoto(1)">← Back</a><span></span></div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="cc-screen" data-screen="q3">
+    <div class="cc-q">What are those people doing about the problem today?</div>
+    <div class="cc-options" data-q="3">
+      <button class="cc-option" data-v="0">Honestly, I don't know</button>
+      <button class="cc-option" data-v="1">I have a guess</button>
+      <button class="cc-option" data-v="2">I know — I've seen or heard their workaround firsthand</button>
+    </div>
+    <div class="cc-nav"><a class="cc-back" onclick="ccGoto(2)">← Back</a><span></span></div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="cc-screen" data-screen="q4">
+    <div class="cc-q">Has anyone shown skin in the game — paid anything, signed anything, or committed real time?</div>
+    <div class="cc-options" data-q="4">
+      <button class="cc-option" data-v="0">Not yet</button>
+      <button class="cc-option" data-v="1">A few strong verbal "I'd buy that" reactions</button>
+      <button class="cc-option" data-v="2">Yes — money, a signature, or scheduled time</button>
+    </div>
+    <div class="cc-nav"><a class="cc-back" onclick="ccGoto(3)">← Back</a><span></span></div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="cc-screen" data-screen="q5">
+    <div class="cc-q">If you had to say what would make you walk away from this idea, could you?</div>
+    <div class="cc-options" data-q="5">
+      <button class="cc-option" data-v="0">I haven't thought about it that way</button>
+      <button class="cc-option" data-v="1">Vaguely</button>
+      <button class="cc-option" data-v="2">Yes — I know what evidence would kill it</button>
+    </div>
+    <div class="cc-nav"><a class="cc-back" onclick="ccGoto(4)">← Back</a><span></span></div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="cc-screen" data-screen="q6">
+    <div class="cc-q">How much have you already built?</div>
+    <div class="cc-options" data-q="6">
+      <button class="cc-option" data-v="none">Nothing yet — it's an idea</button>
+      <button class="cc-option" data-v="none">Sketches, mockups, or a landing page</button>
+      <button class="cc-option" data-v="built">A working product or prototype</button>
+    </div>
+    <div class="cc-nav"><a class="cc-back" onclick="ccGoto(5)">← Back</a><span></span></div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="cc-screen cc-result" data-screen="result">
+    <div class="cc-band" id="cc-band-label">Where you are</div>
+    <h2 id="cc-band-name">—</h2>
+    <p id="cc-band-copy">—</p>
+    <div class="cc-flag" id="cc-flag" style="display:none;"></div>
+    <div class="cc-path-pin" id="cc-pin">You are here on the path: <b id="cc-pin-stage">—</b></div>
+    <a class="btn btn-primary" href="builder.html#invite" id="cc-cta">Book a 20-minute conversation →</a>
+    <p style="font-size:13.5px;color:var(--gray);margin-top:14px;" id="cc-cta-sub"></p>
+
+    <div class="cc-email">
+      <b style="color:var(--navy);font-size:15px;">Want to keep this?</b>
+      <p style="font-size:14px;color:var(--gray);margin-top:6px;">We'll send your Clarity Snapshot — your band, what it means, and your next step — so you can come back to it.</p>
+      <form class="cc-email-form" onsubmit="return false;">
+        <input type="email" placeholder="Email">
+        <button class="btn btn-ghost" type="submit">Send my Snapshot →</button>
+      </form>
+      <p class="privacy-note">We'll only use this to send your Clarity Snapshot, plus the monthly Founder Brief if you check that box. Nothing else.</p>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Opportunity Machine · 314 Jefferson Street, Lafayette, LA 70501 · (337) 769-4085</span>
+    <span>Review build — not for public use</span>
+  </div>
+</footer>
+
+<script>
+var TOTAL_STEPS = 7; // intro + 6 questions, result shown separately
+var answers = {};
+var current = 0;
+var screens = document.querySelectorAll('.cc-screen');
+var progressEl = document.getElementById('cc-progress');
+
+function renderProgress() {
+  progressEl.innerHTML = '';
+  for (var i = 0; i < 6; i++) {
+    var d = document.createElement('div');
+    d.className = 'cc-dot' + (i < current ? ' filled' : '');
+    progressEl.appendChild(d);
+  }
+}
+
+function ccGoto(step) {
+  current = step;
+  screens.forEach(function (s) { s.classList.remove('active'); });
+  var target = document.querySelector('.cc-screen[data-screen="' + (step === 0 ? 'intro' : 'q' + step) + '"]');
+  if (target) target.classList.add('active');
+  renderProgress();
+  window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+}
+
+document.querySelectorAll('.cc-options').forEach(function (group) {
+  group.addEventListener('click', function (e) {
+    var btn = e.target.closest('.cc-option');
+    if (!btn) return;
+    var q = group.getAttribute('data-q');
+    answers[q] = btn.getAttribute('data-v');
+    Array.from(group.children).forEach(function (b) { b.classList.remove('selected'); });
+    btn.classList.add('selected');
+    setTimeout(function () {
+      if (q === '6') {
+        showResult();
+      } else {
+        ccGoto(parseInt(q, 10) + 1);
+      }
+    }, 180);
+  });
+});
+
+function showResult() {
+  var q1 = parseInt(answers['1'], 10);
+  var score = (q1 * 2) + parseInt(answers['2'], 10) + parseInt(answers['3'], 10) + parseInt(answers['4'], 10) + parseInt(answers['5'], 10);
+  var builtAhead = (answers['6'] === 'built') && (q1 <= 1); // "None yet" (0) or "1-4" (1)
+
+  var band, copy, cta, ctaSub, pinStage;
+  if (score <= 3) {
+    band = 'Assumption-Heavy';
+    copy = "Most of what's holding your idea up right now is belief, not evidence. That's not an insult — it's where every funded founder in this building started, including the ones on our proof wall. The risk isn't being here. The risk is building from here. Your single most useful next step: real conversations with the people you think this is for — before anything else gets built.";
+    ctaSub = 'This is exactly the founder Builder was designed for.';
+    pinStage = 'Chaos';
+  } else if (score <= 7) {
+    band = 'Early Signal';
+    copy = "You've started testing — a few conversations, a rough customer picture. Something real is forming, but the sample is still too small to bet on. Three interviews can point anywhere; fifteen point somewhere. Your single most useful next step: structure. The right questions, asked the right way, to enough of the right people.";
+    ctaSub = 'Builder gives your testing a system — and a cohort doing it alongside you.';
+    pinStage = 'Chaos → Clarity';
+  } else if (score <= 11) {
+    band = 'Gaining Clarity';
+    copy = "You've done real work — actual customer conversations, a specific buyer, some knowledge of the workaround you're competing with. The picture is forming. The question now isn't whether to keep testing. It's whether your evidence is deep enough to make the big decisions: what to build first, what to charge, which customer to say no to.";
+    ctaSub = 'Founders at this stage use Builder to pressure-test before the expensive decisions.';
+    pinStage = 'Confidence';
+  } else {
+    band = 'Ready to Test Faster';
+    copy = "You're ahead of most founders who walk through our door — real conversations, a named buyer, skin in the game, and you even know what would make you walk away. That last one is rarer than you'd think. What founders at your stage usually need isn't validation basics. It's speed, sharper experiments, and a room that pushes back.";
+    ctaSub = "Let's figure out whether that's Builder, a mentor match, or something else in the ecosystem.";
+    pinStage = 'Evidence → Momentum';
+  }
+
+  document.getElementById('cc-band-name').textContent = band;
+  document.getElementById('cc-band-copy').textContent = copy;
+  document.getElementById('cc-cta-sub').textContent = ctaSub;
+  document.getElementById('cc-pin-stage').textContent = pinStage;
+
+  var flagEl = document.getElementById('cc-flag');
+  if (builtAhead) {
+    flagEl.style.display = 'block';
+    flagEl.textContent = "One honest flag: you've built ahead of your evidence. That's the most common — and most expensive — pattern we see. It's also very fixable.";
+  } else {
+    flagEl.style.display = 'none';
+  }
+
+  screens.forEach(function (s) { s.classList.remove('active'); });
+  document.querySelector('.cc-screen[data-screen="result"]').classList.add('active');
+  current = 6;
+  renderProgress();
+  document.querySelectorAll('#cc-progress .cc-dot').forEach(function (d) { d.classList.add('filled'); });
+  window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+}
+
+renderProgress();
+</script>
+</body>
+</html>
