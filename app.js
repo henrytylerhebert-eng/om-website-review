@@ -41,4 +41,21 @@
       mirrorLines.forEach(function (p) { p.classList.add('visible'); });
     }
   }
+
+  // Photo carousels (auto-advance every 3s, loop; pauses on hover, respects reduced motion)
+  document.querySelectorAll('.photo-carousel').forEach(function (carousel) {
+    var slides = carousel.querySelectorAll('.photo-carousel-slide');
+    if (slides.length < 2) return;
+    var idx = 0;
+    slides[0].classList.add('active');
+    if (reduceMotion) return;
+    var timer = setInterval(advance, 3000);
+    function advance() {
+      slides[idx].classList.remove('active');
+      idx = (idx + 1) % slides.length;
+      slides[idx].classList.add('active');
+    }
+    carousel.addEventListener('mouseenter', function () { clearInterval(timer); });
+    carousel.addEventListener('mouseleave', function () { timer = setInterval(advance, 3000); });
+  });
 })();
