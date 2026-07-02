@@ -40,6 +40,11 @@ button{font-family:inherit;cursor:pointer;}
 .site-nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:1080px;}
 .wordmark{font-weight:700;font-size:16px;letter-spacing:.02em;color:var(--navy);}
 .wordmark b{color:var(--blue);}
+.wordmark-logo{
+  display:block;height:38px;width:104px;
+  background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAooAAAEECAIAAAAgRILuAABVrUlEQVR4nO29C1xUdf7/fxgYcmBA7syEKMjF+4CmhpCxJF5SvLQmBbS2XdxdN7XS/7Zpm266m3T3vd/L0V33t7/9nT2f8/l+PufMOTNnzjmc+ZzT3xkAAAAAABIA5BkAAAAAJAfIMwAAAABIDpBnAAAAAJAcIM8AAAAAIDlAngEAAABAcoA8AwAAAIDkAHkGAAAAAMkB8gwAAAAAkgPkGQAAAAAkB8gzAAAAAEgOkGcAAAAAkBwgzwAAAAAgOUCeAQAAAEBygDwDAAAAgOQAeQYAAAAAyQHyDAAAAACSA+QZAAAAACQHyDMAAAAASA6QZwAAAACQHCDPAAAAACA5vDDJ8+eX/+LqJgAAAAD9gjc3/A2TBmA9AwAAAIDk8Ojp6XF1GwAAAAAAuAuwngEAAABAcoA8AwAAAIDkAHkGAAAAAMkB8gwAAAAAkgPkGQAAAAAkB8gzAAAAAEgOkGcAAAAAkBwgzwAAAAAgOUCeAQAAAEBygDwDAAAAgOQAeQYAAAAAyQHyDAAAAACSA+QZAAAAACQHyDMAAAAASA6QZwAAAACQHCDPAAAAACA5QJ4BAAAAQHKAPAMAAACA5AB5BgAAAADJAfIMAAAAAJID5BkAAAAAJIcXJnn+/PJfXN0EAAAAoF/w5oa/YdIArGcAAAAAkBwePT09rm4DAAAAAAB3AdYzAAAAAEgOkGcAAAAAkBwgzwAAAAAgOUCeAQAAAEBygDwDAAAAgOQAeQYAAAAAyQHyDAAAAACSA+QZAAAAACQHyDMAAAAASA6QZwAAAACQHCDPAAAAACA5QJ4BAAAAQHKAPAMAAACA5AB5BgAAAADJAfIMAAAAAJID5BkAAAAAJAfIMwAAAABIDpBnAAAAAJAcIM8AAAAAIDlAngEAAABAcoA8AwAAAIDkAHkGAAAAAMkB8gwAAAAAkgPkGQAAAAAkB8gzAAAAAEgOkGcAAAAAkBwgzwAAAAAgOUCeAQAAAEBy/H+ihdALIYECFQAAAABJRU5ErkJggg==");
+  background-size:contain;background-repeat:no-repeat;background-position:left center;
+}
 .nav-links{display:flex;gap:19px;font-size:13.5px;font-weight:600;color:var(--navy);white-space:nowrap;}
 .site-nav .wrap{gap:18px;}
 .nav-links a{opacity:.75;transition:opacity .15s;}
